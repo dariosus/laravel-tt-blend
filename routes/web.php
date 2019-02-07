@@ -20,3 +20,9 @@ Route::get("/topPeliculas", "PeliculasController@top");
 Route::get("/actores", "ActoresController@listado");
 
 Route::get("/detallePelicula/{id}", "PeliculasController@detalle");
+
+Route::get("/agregarPelicula", "PeliculasController@agregar");
+
+Route::post("/agregarPelicula", "PeliculasController@almacenar");
+
+Route::post("/eliminarPelicula", "PeliculasController@eliminar");
