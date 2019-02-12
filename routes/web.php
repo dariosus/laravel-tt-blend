@@ -21,8 +21,12 @@ Route::get("/actores", "ActoresController@listado");
 
 Route::get("/detallePelicula/{id}", "PeliculasController@detalle");
 
-Route::get("/agregarPelicula", "PeliculasController@agregar");
+Route::get("/agregarPelicula", "PeliculasController@agregar")->middleware("auth");
 
-Route::post("/agregarPelicula", "PeliculasController@almacenar");
+Route::post("/agregarPelicula", "PeliculasController@almacenar")->middleware("auth");
 
-Route::post("/eliminarPelicula", "PeliculasController@eliminar");
+Route::post("/eliminarPelicula", "PeliculasController@eliminar")->middleware("auth");
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

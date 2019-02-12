@@ -87,4 +87,10 @@ class PeliculasController extends Controller
 
       return redirect("/peliculas");
     }
+
+    public function listadoAPI() {
+      $peliculas = Pelicula::all();
+
+      return $peliculas;
+    }
 }
